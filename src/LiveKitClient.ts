@@ -1466,6 +1466,7 @@ export default class LiveKitClient {
       audioBitrate: AudioPresets.music.maxBitrate,
       simulcast: true,
       videoSimulcastLayers: [VideoPresets43.h120, VideoPresets43.h240],
+      videoEncoding: {maxBitrate: 600_000, maxFramerate: 30}
     };
 
     if (getGame().settings.get(MODULE_NAME, "audioMusicMode")) {
