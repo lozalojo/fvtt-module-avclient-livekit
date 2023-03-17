@@ -1463,10 +1463,12 @@ export default class LiveKitClient {
 
   get trackPublishOptions(): TrackPublishOptions {
     const trackPublishOptions: TrackPublishOptions = {
-      audioBitrate: AudioPresets.music.maxBitrate,
+      audioBitrate: AudioPresets.music.maxBitrate, // 32_000
       simulcast: true,
       videoSimulcastLayers: [VideoPresets43.h120, VideoPresets43.h240],
-      videoEncoding: {maxBitrate: 600_000, maxFramerate: 30}
+      videoEncoding: {maxBitrate: 1_500_000, maxFramerate: 30},
+	  // videoCodec: "vp8" | "h264" | "av1",
+	  // audioBitrate: 32_000,
     };
 
     if (getGame().settings.get(MODULE_NAME, "audioMusicMode")) {
